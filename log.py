@@ -88,7 +88,7 @@ def write_data(message):
     # The file is automatically closed when the 'with' block ends
 
 
-cycle = 1
+cycle = 0
 
 if __name__ == "__main__":
 
