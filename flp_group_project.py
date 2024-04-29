@@ -46,7 +46,6 @@ with open('system_file.txt', 'r') as file:
   start_index = 0  # Starting index for the next set of rows
 
   while start_index < total_lines:
-    print(start_index)
     end_index = min(start_index + rows_to_display, total_lines)
     for line in lines[start_index:end_index]:
         count += 1
