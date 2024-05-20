@@ -59,7 +59,7 @@ def user_logging():
 
         logged_user.append(user)
 
-    return f"[INFO] {user} {msg}"
+    return f"[INFO] - {user} {msg}"
 
 
 def generate_random_word(length):
