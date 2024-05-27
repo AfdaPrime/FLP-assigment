@@ -1,30 +1,37 @@
+#import the necessary items
 import calendar
 from datetime import datetime
 
 days = {num: str(num) + "th" if num not in [1, 2, 3] else str(num) + ["st", "nd", "rd"][num - 1] for num in range(1, 31)}
 
+#split the text by word
 def split (text):
   return text.split()
 
+#extract the date of the log
 def extractDate(date):
-  year, month, day = map(int, date.split("-"))
+  year, month, day = map(int, date.split("-")) #split date into year, month and day
   print("This log was created on",days[day],"of",calendar.month_name[month],"in the year",year)
   return
 
+#extract the time of the log
 def extractTime(time):
   time_obj = datetime.strptime(time, "%H:%M:%S")
-  formatted_time = time_obj.strftime("%I:%M %p")
+  formatted_time = time_obj.strftime("%I:%M %p") #12-hour clock format with AM/PM notation
   print(formatted_time)
   return
 
+#extract the level of the log
 def extractLevel(level):
   print("Log level is",level)
   return
 
+#extract the log's message
 def extractMessage(text):
   msg = "The message is: " + " ".join(filter(lambda x: x != "-", text))
   print(msg+"\n")
 
+#extract the info about the log
 def extractInfo(text,count):
   print("Log no: ",count)
   date = text.pop(0)
